@@ -21,7 +21,7 @@ const List = ({items, isRemovable, onClick, onRemove, onClickItem, activeItem}) 
   return (
     <ul onClick={onClick} className="list">
       {items.map(item => (
-          <li onClick ={onClickItem ? () => onClickItem(item) : null} key={Math.random()} className={classNames(item.className, {'active': activeItem && activeItem.id === item.id})}>
+          <li onClick ={onClickItem ? () => onClickItem(item) : null} key={Math.random()} className={classNames(item.className, {active: item.active ? item.active : activeItem && activeItem.id === item.id})}>
             <i>
             {item.icon ? item.icon : <Badge color={item.color.name}/> }
             </i>
